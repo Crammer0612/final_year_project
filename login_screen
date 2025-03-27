@@ -1,0 +1,68 @@
+import 'package:flutter/material.dart';
+
+class LoginScreen extends StatelessWidget {
+  @override
+  Widget build(BuildContext context) {
+    return Scaffold(
+      resizeToAvoidBottomInset: false, // Prevents the screen from resizing
+      appBar: AppBar(
+        title: Text('Login'),
+        backgroundColor: Colors.blueAccent, // Add some color to the AppBar
+      ),
+      body: SingleChildScrollView(
+        child: Padding(
+          padding: const EdgeInsets.all(16.0),
+          child: Column(
+            mainAxisAlignment: MainAxisAlignment.center,
+            children: [
+              Icon(Icons.lock, size: 100, color: Colors.blueAccent), // Add an icon
+              SizedBox(height: 16),
+              Text(
+                'Welcome Back!',
+                style: TextStyle(fontSize: 24, fontWeight: FontWeight.bold),
+              ),
+              SizedBox(height: 16),
+              TextField(
+                decoration: InputDecoration(
+                  labelText: 'Email or Phone',
+                  border: OutlineInputBorder(),
+                ),
+              ),
+              SizedBox(height: 16),
+              TextField(
+                decoration: InputDecoration(
+                  labelText: 'Password',
+                  border: OutlineInputBorder(),
+                ),
+                obscureText: true,
+              ),
+              SizedBox(height: 16),
+              ElevatedButton(
+                onPressed: () {
+                  // Implement login functionality
+                },
+                style: ElevatedButton.styleFrom(
+                  backgroundColor: Colors.blueAccent,
+                  padding: EdgeInsets.symmetric(horizontal: 32, vertical: 12),
+                ),
+                child: Text('Login', style: TextStyle(fontSize: 18)),
+              ),
+              TextButton(
+                onPressed: () {
+                  // Navigate to Registration
+                },
+                child: Text('Register', style: TextStyle(color: Colors.blueAccent)),
+              ),
+              TextButton(
+                onPressed: () {
+                  // Implement forgot password
+                },
+                child: Text('Forgot Password?', style: TextStyle(color: Colors.blueAccent)),
+              ),
+            ],
+          ),
+        ),
+      ),
+    );
+  }
+}
